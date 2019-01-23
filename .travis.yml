@@ -1,0 +1,24 @@
+dist: bionic
+sudo: required
+
+services:
+- docker
+
+language: go
+
+go:
+  - 1.9
+
+env:
+  - TAG=1.0.0
+
+stages:
+  - "make"
+
+branches:
+  only:
+    - master
+
+jobs:
+  include:
+    - stage: "make"
