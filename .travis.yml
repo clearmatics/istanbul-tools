@@ -10,7 +10,7 @@ go:
   - 1.9
 
 env:
-  - TAG=2.0.0
+  - TAG=2.1.0
 
 stages:
   - "make"
