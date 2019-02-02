@@ -27,3 +27,5 @@ fi
 
 EXTRA="$(/go/bin/istanbul extra encode --config $SHARED_PATH/config.toml |cut -d':' -f2 | tr -d " \t\n\r")"
 echo "Encoded Istanbul extra-data: "$EXTRA
+
+./write_genesis.py -t $GENESIS_TPL_PATH -f $SHARED_PATH"/genesis.json" -e $EXTRA  || { echo "ERROR: Job04: generate genesis.json file" ; exit 1; }

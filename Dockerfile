@@ -1,7 +1,7 @@
 FROM golang:1.9-alpine
 
 RUN apk update \
- && apk add bash git make g++ --no-cache
+ && apk add bash python git make g++ --no-cache
 
 RUN go get -v github.com/getamis/istanbul-tools/cmd/istanbul
 
