@@ -19,7 +19,6 @@ def get_template(template_path):
 
 
 def write_genesis(filepath, genesis):
-    print(json.dumps(genesis, sort_keys=True, indent=4))
     with open(filepath, 'w') as f:
         json.dump(genesis, f, sort_keys=True, indent=4)
 
