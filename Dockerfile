@@ -6,6 +6,7 @@ RUN apk update \
 RUN go get -v github.com/getamis/istanbul-tools/cmd/istanbul
 
 ADD entrypoint.sh .
+ADD write_genesis.py .
 
 ENTRYPOINT ["./entrypoint.sh"]
 CMD []

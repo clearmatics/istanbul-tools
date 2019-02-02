@@ -11,9 +11,6 @@ fi
 SHARED_PATH=$1
 GENESIS_TPL_PATH=$2
 
-echo $SHARED_PATH
-echo $GENESIS_TPL_PATH
-
 ############## Init Conditions ##########################
 if [ -f $SHARED_PATH/genesis.json ]; then
     echo "INFO: Check initial conditions: "$SHARED_PATH"/genesis.json is exist. Skip generation steps."
@@ -29,3 +26,5 @@ EXTRA="$(/go/bin/istanbul extra encode --config $SHARED_PATH/config.toml |cut -d
 echo "Encoded Istanbul extra-data: "$EXTRA
 
 ./write_genesis.py -t $GENESIS_TPL_PATH -f $SHARED_PATH"/genesis.json" -e $EXTRA  || { echo "ERROR: Job04: generate genesis.json file" ; exit 1; }
+
+echo "INFO: "$SHARED_PATH"/genesis.json was generated successfully"
